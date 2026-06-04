@@ -4,14 +4,14 @@ import { Box, Flex, Text, chakra } from '@chakra-ui/react';
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 
 const navItems = [
-  { label: 'หน้าแรก', href: '#home' },
-  { label: 'เกี่ยวกับเรา', href: '#about' },
-  { label: 'แบบฟอร์มชำระเงิน', href: '#payment' },
-  { label: 'ประกาศอัตราดอกเบี้ย', href: '#rates' },
-  { label: 'เอกสารการประชุม', href: '#docs' },
-  { label: 'การคุ้มครองข้อมูลส่วนบุคคล', href: '#pdpa' },
-  { label: 'ข่าวสารและกิจกรรม', href: '#news' },
-  { label: 'ติดต่อเรา', href: '#contact' },
+  { label: 'หน้าแรก', href: '/#home' },
+  { label: 'เกี่ยวกับเรา', href: '/#about' },
+  { label: 'แบบฟอร์มชำระเงิน', href: '/payment' },
+  { label: 'ประกาศอัตราดอกเบี้ย', href: '/#rates' },
+  { label: 'เอกสารการประชุม', href: '/#docs' },
+  { label: 'การคุ้มครองข้อมูลส่วนบุคคล', href: '/#pdpa' },
+  { label: 'ข่าวสารและกิจกรรม', href: '/#news' },
+  { label: 'ติดต่อเรา', href: '/#contact' },
 ];
 
 export default function Navbar() {

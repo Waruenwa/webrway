@@ -741,6 +741,319 @@ h6 {
   color: white;
 }
 
+.payment-page {
+  min-height: 100vh;
+  background: white;
+  padding: 124px 24px 72px;
+}
+
+.payment-container {
+  width: min(100%, 1560px);
+  margin: 0 auto;
+}
+
+.payment-card {
+  min-height: 356px;
+  background: white;
+  border: 1px solid rgba(26, 5, 51, 0.07);
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(26, 5, 51, 0.1);
+  padding: clamp(24px, 3vw, 40px);
+}
+
+.payment-label,
+.payment-contract-heading {
+  color: #2c3546;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.payment-label {
+  margin-bottom: 28px;
+}
+
+.payment-search-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 128px;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.payment-input-wrap {
+  position: relative;
+  display: block;
+  min-width: 0;
+}
+
+.payment-input-wrap input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #dbe3ef;
+  border-radius: 6px;
+  padding: 0 74px 0 20px;
+  color: #1f2937;
+  font-size: 20px;
+  font-weight: 600;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.payment-input-wrap input::placeholder {
+  color: #7a8aa3;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.payment-input-wrap input:focus {
+  border-color: rgba(232, 25, 44, 0.55);
+  box-shadow: 0 0 0 3px rgba(232, 25, 44, 0.12);
+}
+
+.payment-input-wrap span {
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  color: #687894;
+  font-size: 15px;
+  transform: translateY(-50%);
+}
+
+.payment-primary-button,
+.payment-reset-button,
+.payment-download-button {
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.payment-primary-button {
+  min-height: 50px;
+  padding: 0 24px;
+  background: #ef3d42;
+  font-size: 19px;
+}
+
+.payment-primary-button:hover,
+.payment-reset-button:hover,
+.payment-download-button:hover {
+  transform: translateY(-1px);
+}
+
+.payment-primary-button:hover {
+  box-shadow: 0 12px 24px rgba(239, 61, 66, 0.22);
+}
+
+.payment-primary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
+  transform: none;
+  box-shadow: none;
+}
+
+.payment-help {
+  margin-top: 32px;
+  color: #4b5565;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.payment-message {
+  margin-top: 20px;
+  border-radius: 8px;
+  background: #fff2f2;
+  color: #bf1d28;
+  padding: 12px 14px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.payment-contract-list,
+.payment-contract-summary {
+  margin-top: 28px;
+}
+
+.payment-contract-list {
+  display: grid;
+  gap: 14px;
+}
+
+.payment-contract-option {
+  width: 100%;
+  min-height: 92px;
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 12px;
+  align-items: flex-start;
+  text-align: left;
+  background: white;
+  border: 2px solid #dfe6ef;
+  border-radius: 8px;
+  padding: 16px;
+  color: #2c3546;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.payment-contract-option:hover,
+.payment-contract-option.is-selected {
+  background: #f8fdfa;
+  border-color: #1a0533;
+}
+
+.payment-contract-option strong,
+.payment-contract-option em {
+  display: block;
+  line-height: 1.55;
+}
+
+.payment-contract-option strong {
+  font-size: 16px;
+}
+
+.payment-contract-option em {
+  color: #4b5565;
+  font-size: 15px;
+  font-style: normal;
+}
+
+.payment-radio-dot {
+  width: 16px;
+  height: 16px;
+  margin-top: 4px;
+  border: 2px solid #9aa7b7;
+  border-radius: 50%;
+}
+
+.payment-contract-option.is-selected .payment-radio-dot {
+  border: 5px solid #1a0533;
+}
+
+.payment-wide-button {
+  width: fit-content;
+  margin-top: 2px;
+}
+
+.payment-contract-summary {
+  color: #2c3546;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.payment-contract-summary p + p {
+  margin-top: 2px;
+}
+
+.payment-reset-row {
+  margin-top: 18px;
+  text-align: right;
+}
+
+.payment-reset-button,
+.payment-download-button {
+  background: #1a0533;
+}
+
+.payment-reset-button {
+  min-width: 94px;
+  min-height: 50px;
+  padding: 0 18px;
+  font-size: 19px;
+}
+
+.payment-qr-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.payment-company-name {
+  color: #2c3546;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.payment-company-name span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 4px;
+  background: #e5e7eb;
+}
+
+.payment-qr-frame {
+  width: clamp(180px, 24vw, 270px);
+  aspect-ratio: 1;
+  border-radius: 8px;
+  background: #e9eef5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #74839a;
+  font-size: clamp(132px, 20vw, 190px);
+}
+
+.payment-qr-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.payment-qr-contract {
+  margin-top: 26px;
+  color: #2c3546;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.payment-download-button {
+  width: 66px;
+  height: 50px;
+  margin-top: 14px;
+  font-size: 24px;
+}
+
+.payment-instructions {
+  width: 100%;
+  margin-top: 30px;
+  border-top: 1px solid #e5e7eb;
+  background: #f7faff;
+  border-radius: 8px;
+  color: #4b5565;
+  padding: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+.payment-instructions strong {
+  display: block;
+  color: #2c3546;
+  margin-bottom: 2px;
+}
+
 .news-detail-page {
   background: #ffffff;
   min-height: 100vh;
@@ -848,6 +1161,59 @@ h6 {
 
   .news-detail-content {
     font-size: 17px;
+  }
+
+  .payment-page {
+    padding: 104px 16px 56px;
+  }
+
+  .payment-card {
+    min-height: auto;
+    padding: 22px;
+  }
+
+  .payment-search-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .payment-input-wrap input {
+    height: 50px;
+    font-size: 17px;
+    padding-left: 16px;
+  }
+
+  .payment-input-wrap input::placeholder {
+    font-size: 15px;
+  }
+
+  .payment-primary-button,
+  .payment-wide-button {
+    width: 100%;
+  }
+
+  .payment-label {
+    margin-bottom: 18px;
+  }
+
+  .payment-help {
+    margin-top: 22px;
+  }
+
+  .payment-contract-summary {
+    font-size: 17px;
+  }
+
+  .payment-reset-row {
+    text-align: left;
+  }
+
+  .payment-reset-button {
+    width: 100%;
+  }
+
+  .payment-instructions {
+    font-size: 16px;
   }
 }
 
