@@ -1,0 +1,9 @@
+
+> rway-website@0.1.0 dev
+> next dev --webpack -p 3001
+
+▲ Next.js 16.2.6 (webpack)
+- Local:         http://localhost:3001
+- Network:       http://192.168.0.105:3001
+✓ Ready in 494ms
+[?25h
