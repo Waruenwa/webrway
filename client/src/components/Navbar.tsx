@@ -1,7 +1,10 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import type { MouseEvent } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import { Box, Flex, Text, chakra } from '@chakra-ui/react';
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
+import { scrollToSection } from '@/lib/scrollToSection';
 
 const navItems = [
   { label: 'หน้าแรก', href: '/#home' },
@@ -16,6 +19,44 @@ const navItems = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+
+  function getSectionId(href: string) {
+    return href.startsWith('/#') ? href.slice(2) : null;
+  }
+
+  function handleNavClick(event: MouseEvent<HTMLAnchorElement>, href: string) {
+    const sectionId = getSectionId(href);
+
+    if (!sectionId) {
+      setOpen(false);
+      return;
+    }
+
+    event.preventDefault();
+    setOpen(false);
+
+    if (pathname !== '/') {
+      router.push(href);
+      return;
+    }
+
+    scrollToSection(sectionId);
+  }
+
+  useEffect(() => {
+    if (pathname !== '/') return;
+
+    const sectionId = window.location.hash.replace('#', '');
+    if (!sectionId) return;
+
+    const timer = window.setTimeout(() => {
+      scrollToSection(sectionId, { updateHash: false });
+    }, 80);
+
+    return () => window.clearTimeout(timer);
+  }, [pathname]);
 
   return (
     <>
@@ -34,6 +75,7 @@ export default function Navbar() {
                   px={3}
                   py={2}
                   borderRadius="8px"
+                  onClick={(event) => handleNavClick(event, item.href)}
                 >
                   {item.label}
                 </chakra.a>
@@ -108,7 +150,7 @@ export default function Navbar() {
                 fontSize="15px"
                 py={3}
                 borderBottom="1px solid rgba(255,255,255,0.08)"
-                onClick={() => setOpen(false)}
+                onClick={(event) => handleNavClick(event, item.href)}
               >
                 {item.label}
               </chakra.a>

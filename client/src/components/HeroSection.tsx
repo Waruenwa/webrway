@@ -1,7 +1,12 @@
 'use client';
 import { Box, Flex, Text, VStack, HStack } from '@chakra-ui/react';
+import { scrollToSection } from '@/lib/scrollToSection';
 
 export default function HeroSection() {
+  function scrollToContact() {
+    scrollToSection('contact');
+  }
+
   return (
     <Box className="hero-section" id="home" pt="80px">
       <Box
@@ -72,7 +77,9 @@ export default function HeroSection() {
               justify="center"
               w="100%"
             >
-              <button className="interest-badge">ติดต่อเรา</button>
+              <button className="interest-badge" type="button" onClick={scrollToContact}>
+                ติดต่อเรา
+              </button>
               {/* <button className="outline-btn">เรียนรู้เพิ่มเติม</button> */}
             </HStack>
           </VStack>

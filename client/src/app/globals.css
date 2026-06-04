@@ -27,6 +27,11 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 86px;
+}
+
 button,
 input,
 textarea,
@@ -1236,6 +1241,7 @@ section,
 }
 
 #about,
+#home,
 #rates,
 #docs,
 #pdpa,
